@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 
 const SearchBox = (props) => {
@@ -7,9 +7,8 @@ const SearchBox = (props) => {
   return (
     <div className="searchBox">
       <Select
-        defaultValue={options[0]}
         isClearable={true}
-        name="color"
+        name="address"
         options={options}
         onChange={onSubmit}
       />

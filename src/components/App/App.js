@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import StationCard from './components/StationCard/StationCard';
-import SearchBox from './components/SearchBox/SearchBox';
+import StationCard from '../StationCard/StationCard';
+import SearchBox from '../SearchBox/SearchBox';
+import config from '../../config';
 import './App.css';
-
 
 const App = () => {
   const [stations, setStations] = useState([]);
@@ -10,7 +10,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const res = await fetch('https://app-media.noloco.app/noloco/dublin-bikes-api.json');
+      const res = await fetch(config.dublinBikesApiUrl);
       const stations = await res.json();
       setStations(stations);
       setFilteredStations(stations);
@@ -26,8 +26,8 @@ const App = () => {
   }
 
   const getSearchOptions = () => {
-    return stations.map((station) => ({
-      value: station.address, label: station.address
+    return stations.map(({ address }) => ({
+      value: address, label: address
     }));
   }
 
@@ -40,9 +40,8 @@ const App = () => {
 
       <ul>
         {filteredStations.map((station) => (
-          <li>
+          <li key={station.address} >
             <StationCard
-              key={station.address}
               address={station.address}
               availableBikeStands={station.available_bike_stands}
               availableBikes={station.available_bikes}

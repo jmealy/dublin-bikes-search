@@ -1,3 +1,4 @@
+import config from '../../config';
 import './StationCard.css';
 
 
@@ -7,10 +8,10 @@ const StationCard = (props) => {
     availableBikeStands,
     availableBikes,
     latitude,
-    longitude } = props;
-    
-  const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
-  console.log('!!!!!', googleMapUrl);
+    longitude,
+  } = props;
+
+  const googleMapsLinkUrl = `${config.googleMapsBaseUrl}&query=${latitude},${longitude}`
   return (
     <div className="station-card">
       <div className="station-details">
@@ -18,7 +19,7 @@ const StationCard = (props) => {
         <p>Available Bike Stands: {availableBikeStands}</p>
         <p>Available Bikes: {availableBikes}</p>
       </div>
-      <a href={googleMapUrl} target="_blank">Open in Maps</a>
+      <a href={googleMapsLinkUrl} target="_blank" rel="noreferrer">Open in Maps</a>
     </div>
   );
 }
