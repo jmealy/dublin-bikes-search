@@ -3,7 +3,8 @@ import './StationCard.css';
 
 const StationCard = (props) => {
   const { address, availableBikeStands, availableBikes, latitude, longitude } = props;
-
+  const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+  console.log('!!!!!', googleMapUrl);
   return (
     <div className="station-card">
       <div className="station-details">
@@ -11,7 +12,7 @@ const StationCard = (props) => {
         <p>Available Bike Stands: {availableBikeStands}</p>
         <p>Available Bikes: {availableBikes}</p>
       </div>
-      <button>Open in Maps</button>
+      <a href={googleMapUrl} target="_blank">Open in Maps</a>
     </div>
   );
 }

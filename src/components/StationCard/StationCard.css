@@ -12,14 +12,14 @@
   margin-left: 20px;
 }
 
-button {
+a {
   width: 150px;
-  height: 40px;
+  line-height: 40px;
+  text-align: center;
   margin: auto 20px;
   background-color: #4CAF50;
   border: none;
   color: white;
   text-decoration: none;
-  cursor: pointer;
   border-radius: 5px;
 }

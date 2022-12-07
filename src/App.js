@@ -55,6 +55,8 @@ const App = () => {
           address={station.address}
           availableBikeStands={station.available_bike_stands}
           availableBikes={station.available_bikes}
+          latitude={station.latitude}
+          longitude={station.longitude}
         />
       ))}
     </div>
