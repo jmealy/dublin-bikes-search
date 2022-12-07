@@ -6,3 +6,8 @@
   justify-content: center;
   width: 80%;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}

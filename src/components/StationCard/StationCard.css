@@ -1,25 +1,43 @@
 .station-card {
   width: 100%;
   margin: 10px 0;
-  display: grid;
-  grid-template-columns: 3fr 1fr;
-  text-align: left;
+  padding-bottom: 10px;
+  padding-top: 10px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   border-radius: 5px;
 }
 
-.station-details {
-  margin-left: 20px;
+h2 {
+  margin: 0;
 }
 
 a {
-  width: 150px;
+  width: 80%;
   line-height: 40px;
   text-align: center;
-  margin: auto 20px;
+  margin: 0 auto;
   background-color: #4CAF50;
   border: none;
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  display: block;
+}
+
+@media only screen and (min-width: 560px) {
+  .station-card {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    text-align: left;
+  }
+  
+  .station-details {
+    margin-left: 20px;
+  }
+  
+  a {
+    width: 150px;
+    margin: auto 20px;
+  }
+
 }

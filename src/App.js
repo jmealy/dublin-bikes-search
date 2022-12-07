@@ -7,7 +7,6 @@ import './App.css';
 const App = () => {
   const [stations, setStations] = useState([]);
   const [filteredStations, setFilteredStations] = useState([]);
-  const [selectedAddress, setSelectedAddress] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -22,13 +21,7 @@ const App = () => {
   const onSearchSubmit = (address) => {
     if (!address) return setFilteredStations(stations);
 
-    setSelectedAddress(address);
-    const searchedStation = stations.filter((station) => {
-      if (station.address === address.value) {
-        console.log(station.address, address.value);
-      }
-      return station.address === address.value
-    });
+    const searchedStation = stations.filter(station => station.address === address.value);
     setFilteredStations(searchedStation);
   }
 
@@ -43,15 +36,22 @@ const App = () => {
       <SearchBox
         onSubmit={onSearchSubmit}
         options={getSearchOptions()}
-        selectedOption={selectedAddress}
       />
 
-      {filteredStations.map((station) => (
-        <StationCard
-          key={station.address}
-          station={station}
-        />
-      ))}
+      <ul>
+        {filteredStations.map((station) => (
+          <li>
+            <StationCard
+              key={station.address}
+              address={station.address}
+              availableBikeStands={station.available_bike_stands}
+              availableBikes={station.available_bikes}
+              latitude={station.latitude}
+              longitude={station.longitude}
+            />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

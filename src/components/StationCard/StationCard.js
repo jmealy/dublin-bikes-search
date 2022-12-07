@@ -1,8 +1,14 @@
 import './StationCard.css';
 
 
-const StationCard = ({station}) => {
-  const { address, availableBikeStands, availableBikes, latitude, longitude } = station;
+const StationCard = (props) => {
+  const {
+    address,
+    availableBikeStands,
+    availableBikes,
+    latitude,
+    longitude } = props;
+    
   const googleMapUrl = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
   console.log('!!!!!', googleMapUrl);
   return (
