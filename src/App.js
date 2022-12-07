@@ -1,5 +1,5 @@
-import StationCard from './components/StationCard/StationCard';
 import { useState, useEffect } from 'react';
+import StationCard from './components/StationCard/StationCard';
 import SearchBox from './components/SearchBox/SearchBox';
 import './App.css';
 
@@ -19,8 +19,6 @@ const App = () => {
     fetchData();
   }, []);
 
-
-
   const onSearchSubmit = (address) => {
     if (!address) return setFilteredStations(stations);
 
@@ -31,7 +29,6 @@ const App = () => {
       }
       return station.address === address.value
     });
-    // console.log(searchedStation);
     setFilteredStations(searchedStation);
   }
 
@@ -52,11 +49,7 @@ const App = () => {
       {filteredStations.map((station) => (
         <StationCard
           key={station.address}
-          address={station.address}
-          availableBikeStands={station.available_bike_stands}
-          availableBikes={station.available_bikes}
-          latitude={station.latitude}
-          longitude={station.longitude}
+          station={station}
         />
       ))}
     </div>
