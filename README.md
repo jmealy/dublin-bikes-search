@@ -6,6 +6,10 @@ The site is built using Create React App. When you open the page, it makes a cal
 
 If I had more time I would replace the dropdown meny with a simple search box that filters the list as you type. I used [react-select](https://www.npmjs.com/package/react-select) for the dropdown select menu, but in hindsight it would have been easier with no library at all.
 
+## Video
+
+[Screencast from 12-08-2022 07:16:03 PM.webm](https://user-images.githubusercontent.com/17801424/206547264-a3b9938b-be8f-40bc-8ec1-c49c67ebba6d.webm)
+
 ## Testing it out
 
 In the project directory, you can run:
@@ -17,3 +21,4 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
